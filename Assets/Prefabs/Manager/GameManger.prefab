@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3894197241984049004}
   - component: {fileID: 5417669445517496627}
+  - component: {fileID: 9076611471887538323}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -46,3 +47,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockText: {fileID: 0}
   secondsPerGameMinute: 1
+  startHour: 0
+  startMinute: 10
+  strikeText: {fileID: 0}
+  maxStrikes: 3
+  currentStrikes: 0
+  mainDoor: {fileID: 0}
+--- !u!114 &9076611471887538323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5994167371889984205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79e75144efcc7a545a01f2b1c26ccc49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  journalPanel: {fileID: 0}
+  clueListText: {fileID: 0}
+  playerInteraction: {fileID: 0}

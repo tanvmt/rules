@@ -28,7 +28,7 @@ public class PlayerInteraction : MonoBehaviour
                 }
             }
 
-            if (hitInfo.collider.GetComponent<InteractiveDoor>() != null)
+            else if (hitInfo.collider.GetComponent<InteractiveDoor>() != null)
             {
                 interactionPromptText.text = "Nhấn chuột trái để mở/đóng cửa";
                 interactionPromptText.gameObject.SetActive(true);

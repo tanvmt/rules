@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 using System.Collections.Generic;
 using System.Text;
 using StarterAssets;
@@ -13,7 +12,6 @@ public class JournalUI : MonoBehaviour
     public TextMeshProUGUI clueListText;
 
     [Header("Player Components to Disable")]
-    public FirstPersonController playerController;
     public PlayerInteraction playerInteraction;
 
     private GameManager gameManager;
@@ -38,7 +36,6 @@ public class JournalUI : MonoBehaviour
                 Time.timeScale = 0f;
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
-                if (playerController != null) playerController.enabled = false;
                 if (playerInteraction != null) playerInteraction.enabled = false;
             }
             else
@@ -46,7 +43,6 @@ public class JournalUI : MonoBehaviour
                 Time.timeScale = 1f;
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                if (playerController != null) playerController.enabled = true;
                 if (playerInteraction != null) playerInteraction.enabled = true;
             }
         }
