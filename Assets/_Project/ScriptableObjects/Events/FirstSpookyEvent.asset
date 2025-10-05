@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b90219b14a4ec09479fbd6676cc78694, type: 3}
   m_Name: FirstSpookyEvent
   m_EditorClassIdentifier: 
-  eventName: 
-  description: 
+  eventName: Test Event
+  description: ABCD
   messageToLog: Something spooky just happened!
