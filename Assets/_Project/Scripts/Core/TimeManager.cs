@@ -22,7 +22,6 @@ namespace NenNhangSinhMenh.Core
 
         [Header("Timer Settings")]
         [SerializeField] private float timePerIncense = 300.0f;
-        [SerializeField] private TextMeshProUGUI timerText;
 
         private float _remainingTime;
         private bool _isTimerRunning = false;
@@ -42,7 +41,7 @@ namespace NenNhangSinhMenh.Core
                     _isTimerRunning = false;
 
                     Debug.Log("Hết giờ rồi! Trò chơi kết thúc.");
-                    timerText.text = "HẾT GIỜ";
+                    UI.UIManager.Instance.UpdateTimer("Hết giờ!");
                 }
             }
         }
@@ -58,7 +57,8 @@ namespace NenNhangSinhMenh.Core
         {
             int minutes = Mathf.FloorToInt(_remainingTime / 60);
             int seconds = Mathf.FloorToInt(_remainingTime % 60);
-            timerText.text = string.Format("Thời Gian: {0:00}:{1:00}", minutes, seconds);
+            string timeString = string.Format("Thời Gian: {0:00}:{1:00}", minutes, seconds);
+            UI.UIManager.Instance.UpdateTimer(timeString);
         }
     }
 }

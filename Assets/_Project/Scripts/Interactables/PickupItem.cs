@@ -2,24 +2,24 @@ using UnityEngine;
 
 namespace NenNhangSinhMenh.Interactables
 {
-    /// <summary>
-    /// Allows an object in the world to be picked up by the player.
-    /// </summary>
     public class PickupItem : MonoBehaviour, IInteractable
     {
         [SerializeField] private Gameplay.ItemData itemData;
 
-        // We use the item name from the ScriptableObject as the prompt.
+        private bool _isInteracted = false;
+
         public string InteractionPrompt => $"Nhặt {itemData.itemName}";
 
         public bool Interact()
         {
-            // Find the player's inventory and add the item.
+            if (_isInteracted) return false;
+            _isInteracted = true;
+
             Player.Inventory playerInventory = FindFirstObjectByType<Player.Inventory>();
             if (playerInventory != null)
             {
                 playerInventory.AddItem(itemData);
-                Destroy(gameObject); // The object disappears after being picked up.
+                Destroy(gameObject);
                 return true;
             }
             return false;

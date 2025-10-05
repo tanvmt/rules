@@ -10,7 +10,6 @@ namespace NenNhangSinhMenh.Player
         [Header("Interaction Settings")]
         [SerializeField] private float interactionDistance = 3.0f;
         [SerializeField] private Transform cameraTransform;
-        [SerializeField] private TextMeshProUGUI interactionPromptText;
 
         private PlayerControls _playerControls;
 
@@ -44,13 +43,12 @@ namespace NenNhangSinhMenh.Player
                 IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                 if (interactable != null)
                 {
-                    interactionPromptText.text = interactable.InteractionPrompt;
-                    interactionPromptText.gameObject.SetActive(true);
+                    UI.UIManager.Instance.UpdateInteractionPrompt(interactable.InteractionPrompt);
                     return;
                 }
             }
 
-            interactionPromptText.gameObject.SetActive(false);
+            UI.UIManager.Instance.UpdateInteractionPrompt("");
         }
 
         private void OnInteract(InputAction.CallbackContext context)
