@@ -48,13 +48,19 @@ namespace NenNhangSinhMenh.Interactables
                 Core.TimeManager.Instance.StartTimer();
 
                 Core.ItemSpawnerManager.Instance.SpawnNextIncense();
-                
+
                 Debug.Log("Đã thắp nhang lên bàn thờ. Cây nhang tiếp theo đã xuất hiện ở đâu đó.");
                 return true;
             }
-            
+
             Debug.Log("Không đủ vật phẩm để thắp!");
             return false;
+        }
+        
+        public void ExtinguishIncense()
+        {
+            _isIncenseLit = false;
+            Debug.Log("Nhang trên bàn thờ đã tắt.");
         }
     }
 }
